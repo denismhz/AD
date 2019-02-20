@@ -17,3 +17,6 @@ prog: main.cpp $(DEPS)
 	
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+
+start:
+	./prog

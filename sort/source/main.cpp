@@ -4,7 +4,7 @@
 #include <time.h>
 
 int acompare(int a, int b){
-    return a == b ? 0 : ((a > b) ? 1 : -1);
+  return a == b ? 0 : ((a < b) ? -1 : 1);
 }
 
 int test(int* p, int l){
@@ -26,7 +26,7 @@ int main(){
         printf("%d,", a[i]); 
     }
     printf("\n");
-    s->selectionSort(a, 10);
+    s->mergeSort(a, 0, 9);
 
     for(int i = 0; i < 10; i++){
         printf("%d,", a[i]); 
