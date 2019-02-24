@@ -2,6 +2,10 @@
 #define _SORT_
 #include <stdlib.h>
 #include <stdio.h>
+
+//template<typename T>
+void prarr(int *arr, int s, int e);
+
 template<class T>
 class Sort
 {
@@ -12,10 +16,16 @@ class Sort
         void insertionSort(T*, int);
         void shellSort(T*, int);
         void mergeSort(T*, int, int);
+        void countingSort(int*, int);
+        void quickSort(T*, int, int);
+        void radixSort(int*, int);
     private:
         void swap(T&, T&);
+        T getMax(T*, int);
+        T getMin(T*, int);
         int (*compare)(T,T);
         void merge(T*, int, int, int);
+        int partition(T*, int, int);
 };
 
 template<typename T>
@@ -28,6 +38,24 @@ void Sort<T>::swap(T &a, T &b){
     T tmp = a;
     a = b;
     b = tmp;
+}
+
+template<typename T>
+T Sort<T>::getMax(T* arr, int l){
+    int max = 0;
+    for(int i = 0; i < l; i++){
+        if(compare(arr[i], max) == 1) max = arr[i];
+    }
+    return max;
+}
+
+template<typename T>
+T Sort<T>::getMin(T* arr, int l){
+    int min = arr[0];
+    for(int i = 0; i < l; i++){
+        if(compare(arr[i], min) == -1) min = arr[i];
+    }
+    return min;
 }
 
 template<typename T>
@@ -82,13 +110,6 @@ void Sort<T>::shellSort(T* arr, int l){
     }
 }
 
-//template<typename T>
-/*void prarr(int *arr, int s, int e, char *ex){
-  printf(ex);
-  for(int i = s; i <= e; ++i)
-    printf("%d%s", arr[i], i == e ? "\n" : ", ");
-}*/
-
 template<typename T>
 void Sort<T>::mergeSort(T* arr, int start, int end){
     if(end - start < 1 ) return;
@@ -109,18 +130,60 @@ void Sort<T>::merge(T* arr, int start, int mid, int end){
             tmp[index++] = arr[i++];
 	else
             tmp[index++] = arr[j++];
-
-    
     //Copy left over elems
     while(i <= mid)
         tmp[index++] = arr[i++];
 
     while(j <= end)
       tmp[index++] = arr[j++];
-    
     //Copy tmp to arr
     for(int i = start; i <= end; i++)
        arr[i] = tmp[i - start];
+}
+
+template<typename T>
+void Sort<T>::countingSort(int* arr, int l){
+    int k = 0;
+    int max = getMax(arr, l);
+    int min = getMin(arr, l);
+    int* tmp = (int*)calloc(sizeof(int), (max-min)+1);
+    for(int i = 0; i < l; i++){
+        tmp[arr[i]-min]++;
+    }
+    for(int i = min; i <= max; i++){
+        while(tmp[i-min] > 0){
+            arr[k++] = i;
+            tmp[i-min]--;
+        }
+    }
+}
+
+template<typename T>
+void Sort<T>::quickSort(T* arr, int start, int end){
+    if(end <= start) return;
+    int pivotIndex = partition(arr, start, end);
+    quickSort(arr, start, pivotIndex);
+    quickSort(arr, pivotIndex+1, end);   
+}
+
+template<typename T>
+int Sort<T>::partition(T* arr, int start, int end){
+    int pivot = arr[(start+end)/2];
+    int i = start-1;
+    int j = end+1;
+    while(1){
+        do i++;
+        while(compare(arr[i], pivot) == -1);
+        do j--;
+        while(compare(arr[j], pivot) == 1);
+        if(i >= j) return j;
+        swap(arr[i], arr[j]);
+    }
+}
+
+template<typename T>
+void Sort<T>::radixSort(int* arr, int l){
+    
 }
 
 #endif

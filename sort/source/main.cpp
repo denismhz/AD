@@ -14,6 +14,11 @@ int test(int* p, int l){
     return 1;
 }
 
+void prarr(int *arr, int s, int e){
+  for(int i = s; i <= e; ++i)
+    printf("%d%s", arr[i], i == e ? "\n" : ", ");
+}
+
 int main(){
     int (*fct)(int, int) = acompare;
     Sort<int>* s = new Sort<int>(fct);
@@ -22,15 +27,10 @@ int main(){
     for(int i = 0; i < 10; i++){
         a[i] = rand() % 100;
     }
-    for(int i = 0; i < 10; i++){
-        printf("%d,", a[i]); 
-    }
+    prarr(a, 0, 9);
     printf("\n");
-    s->mergeSort(a, 0, 9);
-
-    for(int i = 0; i < 10; i++){
-        printf("%d,", a[i]); 
-    }
+    s->countingSort(a, 10);
+    prarr(a, 0,9);
     printf("\n");
     printf("%d\n", test(a, 10));
     return 0;
