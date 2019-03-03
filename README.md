@@ -9,14 +9,16 @@ My implementation of different algorithms and datastructures in C++ for better u
 ## Sorting algorithms
   Overview of all sorting algorithms implemented in this project with time and space complexity.
   
-  1. Bubblesort 
-  1. Selectionsort
-  1. Insertionsort
-  1. Shellsort
-  1. Mergesort
-  1. Quicksort
-  1. Radixsort
+  1. **Bubblesort**
+  1. **Selectionsort**
+  1. **Insertionsort**
+  1. **Shellsort**
+  1. **Mergesort**
+  1. **Quicksort**
+  1. **Radixsort**
   
   Implemented in [sort.h](#sort.h).
 
 ## Documentation
+
+#### sort.h
