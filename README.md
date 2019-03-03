@@ -8,65 +8,53 @@ My implementation of different algorithms and datastructures in C++ for better u
 
 ## Sorting algorithms
 Overview of all sorting algorithms implemented in this project with time and space complexity.
-
 1. **Bubblesort**
  * Worst case time complexity: **O(n^2)**
  * Spacecomplexity: **O(1)**
  * "In-place algorithm"
  * stable
-
-1. **Selectionsort**
+2. **Selectionsort**
  * Worst case time complexity: **O(n^2)**
  * Spacecomplexity: **O(1)**
  * "In-place algorithm"
  * unstable
-
-1. **Insertionsort**
+3. **Insertionsort**
  * Worst case time complexity: **O(n^2)**
  * Spacecomplexity: **O(1)**
  * "In-place algorithm"
  * stable
-
-1. **Shellsort**
+4. **Shellsort**
  * Variation of Insertion Sort (1 < gap)
  * Worst case time complexity: **O(n^2)** (dependent on gap)
  * Spacecomplexity: **O(1)**
  * "In-place algorithm"
  * unstable
-
-1. **Mergesort**
+5. **Mergesort**
  * Worst case time complexity: **O(nln(n))**
  * Spacecomplexity: **O(n)**
  * "In-place algorithm"
  * Divide and conquer
  * stable
- 
-
-1. **Quicksort**
+6. **Quicksort**
  * Worst case time complexity: **O(n^2)**
  * Average case time complexity: **O(nln(n))**
  * Mostly performs better than mergesort
  * Spacecomplexity: **O(1)**
  * "In-place algorithm"
  * unstable
-
-1. **Counting Sort**
+7. **Counting Sort**
  * Only works with non-negative discrete values
  * Does not use comparison
  * Complexity depending on range of algorithms
  * Worst case time complexity: **O(n+k)**
  * Spacecomplexity: **O(k)**
  * unstable (stable variation used in radixsort)
-
-1. **Radixsort**
+8. **Radixsort**
  * Worst case time complexity: **O(nk)**
  * Spacecomplexity: **O(n+k)**
  * stable
- 
 Implemented in [_sort.h_](include/sort.h). View [documentation](#documentation) for more Information.
-
 ## Documentation
-
 #### sort.h
 
 `void prarr(int *arr, int s, int e);`
