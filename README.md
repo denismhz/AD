@@ -63,18 +63,15 @@ Clone/Download Repository. `cd AD/sort/source` -> `make start`. Compiles and run
 #### sort.h
 `void prarr(int *arr, int s, int e);`
 
-
 Print array arr from index s to index e.
 
 
 `int pow(int, int);`
 
-
 _@return_ first parameter to the power of second parameter
 
 
 `int getChar(int, std::string);`
-
 
 _@param_ int position, string value
 _@return_ numeric value of string at position - 'a' map 'a' - 'z' to 0-25
@@ -82,12 +79,10 @@ _@return_ numeric value of string at position - 'a' map 'a' - 'z' to 0-25
 
 `Sort();`
 
-
 Default constructor
 
 
 `Sort(int (*compare)(T, T));`
-
 
 _@param_ function pointer to provided compare function
 Set the function by which objects are compared here. View [code examples](#code-examples) for more details.
@@ -96,33 +91,28 @@ Set the function by which objects are compared here. View [code examples](#code-
 
 `void bubbleSort(T*, int);`
 
-
 _@param_ T* array of elements of type T, int i number of elements in array
 
 
 `void selectionSort(T*, int);`
 
-
 _@param_ T* array of elements of type T, int i number of elements in array
----
+___
 
 
 
 `void insertionSort(T*, int);`
 
-
 _@param_ T* array of elements of type T, int i number of elements in array
----
+___
 
 
 `void shellSort(T*, int);`
-
 
 _@param_ T* array of elements of type T, int i number of elements in array
 
 
 `void mergeSort(T*, int, int);`
-
 
 _@param_ T* array of elements of type T, sort elements from int start to int end
 
