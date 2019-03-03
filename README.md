@@ -204,21 +204,22 @@ Create array of num random Person*.
 ___
 View [main.cpp](#sort/source/main.cpp)
 ```cpp
-Example compare function. Compares the age of two Person objects. Returns 1 if a greater b, 0 if equal, -1 if smaller.
-
 int ageCompare(Person* a, Person* b){
   if(a->getAge() > b->getAge()) return 1;
   if(b->getAge() > a->getAge()) return -1;
   return 0;
 }
 ```
-```cpp
-Create function pointer from compare function. Create Sort object with compare function pointer as parameter. Then sort the persons with bubblesort.
+Example compare function. Compares the age of two Person objects. Returns 1 if a greater b, 0 if equal, -1 if smaller.
+___
 
+```cpp
 int (*fct)(Person*, Person*) = ageCompare;
 Sort<Person*>* s = new Sort<Person*>(fct);
 s->bubbleSort(persons, 10);
 ```
+Create function pointer from compare function. Create Sort object with compare function pointer as parameter. Then sort the persons with bubblesort.
+___
 ```cpp
 void sortByLastName(){
     Person** persons = createRandPersons(10);
