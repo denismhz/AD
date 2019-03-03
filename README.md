@@ -1,11 +1,13 @@
 # Algorithms and Datastructures
 My implementation of different algorithms and datastructures in C++ for better understanding.
 
+
 ## Table of contents
 * [Sorting algorithms](#sorting-algorithms)
 * [How to test/use](#how-to-testuse)
 * [Documentation](#documentation)
 * [Code Examples](#code-examples)
+
 
 ## Sorting algorithms
 Overview of all sorting algorithms implemented in this project with time and space complexity.
@@ -64,57 +66,92 @@ Clone/Download Repository. `cd AD/sort/source` -> `make start`. Compiles and run
 
 Print array arr from index s to index e.
 
+
 `int pow(int, int);`
 
 
-@return first parameter to the power of second parameter
+_@return_ first parameter to the power of second parameter
 
 
 `int getChar(int, std::string);`
 
 
-@param int position, string value
-@return numeric value of string at position - 'a'
-map 'a' - 'z' to 0-25
+_@param_ int position, string value
+_@return_ numeric value of string at position - 'a' map 'a' - 'z' to 0-25
 
 
 `Sort();`
+
+
 Default constructor
 
+
 `Sort(int (*compare)(T, T));`
-@param function pointer to provided compare function
+
+
+_@param_ function pointer to provided compare function
+
+
 
 `void bubbleSort(T*, int);`
-@param T* array of elements of type T, int i number of elements in array
+
+
+_@param_ T* array of elements of type T, int i number of elements in array
+
+
 
 `void selectionSort(T*, int);`
-@param T* array of elements of type T, int i number of elements in array
+
+
+_@param_ T* array of elements of type T, int i number of elements in array
+
+
 
 `void insertionSort(T*, int);`
-@param T* array of elements of type T, int i number of elements in array
+
+
+_@param_ T* array of elements of type T, int i number of elements in array
+
 
 `void shellSort(T*, int);`
-@param T* array of elements of type T, int i number of elements in array
+
+
+_@param_ T* array of elements of type T, int i number of elements in array
+
 
 `void mergeSort(T*, int, int);`
-@param T* array of elements of type T, sort elements from int start to int end
+
+
+_@param_ T* array of elements of type T, sort elements from int start to int end
+
+
 
 `void merge(T*, int, int, int);`
 
+
+
 `void countingSort(int*, int);`
+
 
 `void quickSort(T*, int, int);`
 
+
 `int partition(T*, int, int);`
+
 
 `void radixSort(T*, std::string[], int, int);`
 
+
 `void swap(T&, T&);`
+
 
 `T getMax(T*, int);`
 
+
 `T getMin(T*, int);`
 
+
 `int (*compare)(T,T);`  
+
 
 `void radixSingleSort(T*, std::string[], int, int, int, int);`
