@@ -55,21 +55,28 @@ Overview of all sorting algorithms implemented in this project with time and spa
  * Spacecomplexity: **O(n+k)**
  * stable
 Implemented in [_sort.h_](sort/include/sort.h). View [documentation](#sorth) for more Information.
-## How to use/test
-Clone/Download Repository.
+## How to test/use
+Clone/Download Repository. `cd AD/sort/source` -> `make start`. Compiles and runs program.
 ## Documentation
 #### sort.h
-
 `void prarr(int *arr, int s, int e);`
+
+
 Print array arr from index s to index e.
 
 `int pow(int, int);`
+
+
 @return first parameter to the power of second parameter
 
+
 `int getChar(int, std::string);`
+
+
 @param int position, string value
 @return numeric value of string at position - 'a'
 map 'a' - 'z' to 0-25
+
 
 `Sort();`
 Default constructor
