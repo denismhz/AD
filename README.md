@@ -62,7 +62,7 @@ Clone/Download Repository. `cd AD/sort/source` -> `make start`. Compiles and run
 ## Documentation
 #### person.h
 [Example Class](sort/include/person.h).
-Create Objects with Name and Age.
+Create objects with random name and age.
 #### sort.h
 T can be any type. Functions with T* use the provided compare function.
 
@@ -189,6 +189,7 @@ _@return_ View [code examples](#code-examples) for more details.
 T can be any type of object. Define here by which values objects are compared and when they are greater, equal or smaller than another object.
 ___
 # Code Examples
+Taken form [main.cpp](#sort/source/main.cpp)
 ```cpp
 
 ```
