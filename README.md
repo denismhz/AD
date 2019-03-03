@@ -9,7 +9,7 @@ My implementation of different algorithms and datastructures in C++ for better u
 ## Sorting algorithms
 Overview of all sorting algorithms implemented in this project with time and space complexity.
 
-1. **Bubblesort**
+1. Bubblesort
 ..* Worst case time complexity: **O(n^2)**
 ..* Spacecomplexity: **O(1)**
 ..* "In-place algorithm"
