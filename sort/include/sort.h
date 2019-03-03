@@ -1,24 +1,26 @@
 #ifndef _SORT_
 #define _SORT_
-#include <stdlib.h>
-#include <stdio.h>
+#include <string>
 
-//template<typename T>
 void prarr(int *arr, int s, int e);
+int pow(int, int);
+int getDigit(int, std::string, int);
+int getChar(int, std::string);
 
 template<class T>
 class Sort
 {
     public:
+        Sort();
         Sort(int (*compare)(T, T));
-        void bubbleSort(T*, int);
-        void selectionSort(T*, int);
-        void insertionSort(T*, int);
-        void shellSort(T*, int);
-        void mergeSort(T*, int, int);
+        void bubbleSort(T*, int); //works
+        void selectionSort(T*, int); //works
+        void insertionSort(T*, int); //works
+        void shellSort(T*, int); //works
+        void mergeSort(T*, int, int); //works
         void countingSort(int*, int);
-        void quickSort(T*, int, int);
-        void radixSort(int*, int);
+        void quickSort(T*, int, int); //works
+        void radixSort(T*, std::string[], int, int);
     private:
         void swap(T&, T&);
         T getMax(T*, int);
@@ -26,7 +28,27 @@ class Sort
         int (*compare)(T,T);
         void merge(T*, int, int, int);
         int partition(T*, int, int);
+        void radixSingleSort(T*, std::string[], int, int, int, int);
 };
+
+int getDigit(int pos, std::string val, int radix){
+    return val[pos]-'a';
+}
+
+int getChar(int pos, std::string val){
+    return val[pos]-'a';
+}
+
+int pow(int a, int b){
+    int e = 1;
+    for(int i = 1; i <= b; i++){
+        e*=a;
+    }
+    return e;
+}
+
+template<typename T>
+Sort<T>::Sort(){}
 
 template<typename T>
 Sort<T>::Sort(int (*compare)(T,T)){
@@ -83,7 +105,7 @@ void Sort<T>::selectionSort(T* arr, int l){
 
 template<typename T>
 void Sort<T>::insertionSort(T* arr, int l){
-    int newElem = 0;
+    T newElem = 0;
     for(int i = 1; i < l; i++){
         newElem = arr[i];
         for(int j = i-1; j >= 0; j--){
@@ -95,13 +117,24 @@ void Sort<T>::insertionSort(T* arr, int l){
     }    
 }
 
+void insertionSortRec(int* arr, int l){
+    if(l <= 1) return;
+    insertionSortRec(arr, l-1);
+    int newElem = arr[l-1];
+    int i = 0;
+    for(i = l-1; i > 0 && arr[i-1] > newElem; i--){
+        arr[i] = arr[i-1];
+    }
+    arr[i] = newElem;
+}
+
 template<typename T>
 void Sort<T>::shellSort(T* arr, int l){
     for(int gap = l/2; gap > 0; gap/=2){
         for(int i = gap; i < l; i++){
-            int newElem = arr[i];
+            T newElem = arr[i];
             int j = i;
-            while(j >= gap && arr[j-gap] > newElem){
+            while(j >= gap && compare(arr[j-gap], newElem) == 1){
                 arr[j] = arr[j-gap];
                 j -= gap;           
             }
@@ -110,6 +143,7 @@ void Sort<T>::shellSort(T* arr, int l){
     }
 }
 
+//@end length-1 start 0
 template<typename T>
 void Sort<T>::mergeSort(T* arr, int start, int end){
     if(end - start < 1 ) return;
@@ -146,7 +180,7 @@ void Sort<T>::countingSort(int* arr, int l){
     int k = 0;
     int max = getMax(arr, l);
     int min = getMin(arr, l);
-    int* tmp = (int*)calloc(sizeof(int), (max-min)+1);
+    int tmp[(max-min)+1] = {0};
     for(int i = 0; i < l; i++){
         tmp[arr[i]-min]++;
     }
@@ -168,7 +202,7 @@ void Sort<T>::quickSort(T* arr, int start, int end){
 
 template<typename T>
 int Sort<T>::partition(T* arr, int start, int end){
-    int pivot = arr[(start+end)/2];
+    T pivot = arr[(start+end)/2];
     int i = start-1;
     int j = end+1;
     while(1){
@@ -181,9 +215,54 @@ int Sort<T>::partition(T* arr, int start, int end){
     }
 }
 
+char toLowerCase(char c){
+    if(c >='A' && c<='Z'){
+        return c+32;
+    }
+    return c;
+}
+
 template<typename T>
-void Sort<T>::radixSort(int* arr, int l){
+void Sort<T>::radixSort(T* out, std::string a[], int radix, int l){
+    unsigned long int maxlength = 0;
+    //add padding
+    for(int i = 0; i < l; i++){
+        if(a[i].length() > maxlength) maxlength = a[i].length();
+    }
+    for(int i = 0; i < l; i++){
+      a[i].resize(maxlength, 'a');
+      //to lower case
+      for(char& c: a[i]){
+        c = toLowerCase(c);
+      }
+    }
+    for(unsigned long int i = 0; i < maxlength; i ++){
+        radixSingleSort(out, a, i,maxlength, radix, l);
+    }
+}
+
+template<typename T>
+void Sort<T>::radixSingleSort(T* out,std::string arr[], int pos, int width, int radix, int l){
+    int countArr[radix] = {0};
+    int countArr2[radix] = {0};
+    for(int i = 0; i < l; i++){
+        countArr[getChar((width-1)-pos, arr[i])]++;
+        countArr2[getChar((width-1)-pos, arr[i])]++;
+    }
+    //Adjust countArray
+    for(int i = 1; i < radix; i++) countArr[i] += countArr[i-1];
+    for(int i = 1; i < radix; i++) countArr2[i] += countArr2[i-1];
+    std::string tmp[l];
+    T t[l];
+    for(int tmpIndex = l-1; tmpIndex >= 0; tmpIndex--){
+        tmp[--countArr[getChar((width-1)-pos, arr[tmpIndex])]] = arr[tmpIndex];
+        t[--countArr2[getChar((width-1)-pos, arr[tmpIndex])]] = out[tmpIndex];
+    }
     
+    for(int i = 0; i < l; i++){
+        arr[i] = tmp[i];
+        out[i] = t[i];
+    }
 }
 
 #endif

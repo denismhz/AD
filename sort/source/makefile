@@ -1,7 +1,7 @@
 IDIR = ../include
 LDIR = ../lib
 ODIR = obj
-_DEPS = sort.h
+_DEPS = sort.h person.h
 _OBJ = main.o sort.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
