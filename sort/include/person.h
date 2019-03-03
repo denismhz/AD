@@ -5,10 +5,6 @@
 #include <fstream>
 using namespace std;
 
-int randAge();
-string createLastName();
-string createFirstName();
-
 class Person
 {
     public:
@@ -23,6 +19,11 @@ class Person
         string firstName;
         string lastName;
 };
+
+int randAge();
+string createLastName();
+string createFirstName();
+Person** createRandPersons(int num);
 
 Person::Person(string firstName, string lastName, int age){
     this->firstName = firstName;
@@ -44,6 +45,15 @@ string Person::getFirstName(){
 
 string Person::getLastName(){
     return lastName;
+}
+
+Person** createRandPersons(int num){
+    //Create array of random persons
+    Person** persons = (Person**) malloc(num*sizeof(Person*));
+    for(int i = 0; i < num; i++){
+        persons[i] = new Person(createFirstName(), createLastName(), randAge());
+    }
+    return persons;
 }
 
 void Person::toString(){

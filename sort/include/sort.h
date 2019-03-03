@@ -2,10 +2,6 @@
 #define _SORT_
 #include <string>
 
-void prarr(int *arr, int s, int e);
-int pow(int, int);
-int getChar(int, std::string);
-
 template<class T>
 class Sort
 {
@@ -29,6 +25,10 @@ class Sort
         int partition(T*, int, int);
         void radixSingleSort(T*, std::string[], int, int, int, int);
 };
+
+void prarr(int *arr, int s, int e);
+int pow(int, int);
+int getChar(int, std::string);
 
 int getChar(int pos, std::string val){
     return val[pos]-'a';
