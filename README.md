@@ -17,7 +17,7 @@ My implementation of different algorithms and datastructures in C++ for better u
   1. **Quicksort**
   1. **Radixsort**
   
-  Implemented in [sort.h](#sort.h).
+  Implemented in _sort.h_. View [documentation](#documentation) for more Information.
 
 ## Documentation
 
