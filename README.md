@@ -213,12 +213,14 @@ int ageCompare(Person* a, Person* b){
 Example compare function. Compares the age of two Person objects. Returns 1 if a greater b, 0 if equal, -1 if smaller.
 
 
+
 ```cpp
 int (*fct)(Person*, Person*) = ageCompare;
 Sort<Person*>* s = new Sort<Person*>(fct);
 s->bubbleSort(persons, 10);
 ```
 Create function pointer from compare function. Create Sort object with compare function pointer as parameter. Then sort the persons with bubblesort.
+
 
 
 ```cpp
