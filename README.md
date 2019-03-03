@@ -90,6 +90,7 @@ Default constructor
 
 
 _@param_ function pointer to provided compare function
+Set the function by which objects are compared here. View [code examples](#code-examples) for more details.
 
 
 
@@ -99,11 +100,11 @@ _@param_ function pointer to provided compare function
 _@param_ T* array of elements of type T, int i number of elements in array
 
 
-
 `void selectionSort(T*, int);`
 
 
 _@param_ T* array of elements of type T, int i number of elements in array
+---
 
 
 
@@ -111,6 +112,7 @@ _@param_ T* array of elements of type T, int i number of elements in array
 
 
 _@param_ T* array of elements of type T, int i number of elements in array
+---
 
 
 `void shellSort(T*, int);`
