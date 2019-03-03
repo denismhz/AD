@@ -3,6 +3,7 @@ My implementation of different algorithms and datastructures in C++ for better u
 
 ## Table of contents
 * [Sorting algorithms](#sorting-algorithms)
+* [How to test/use](#how-to-testuse)
 * [Documentation](#documentation)
 * [Code Examples](#code-examples)
 
@@ -53,7 +54,9 @@ Overview of all sorting algorithms implemented in this project with time and spa
  * Worst case time complexity: **O(nk)**
  * Spacecomplexity: **O(n+k)**
  * stable
-Implemented in [_sort.h_](sort/include/sort.h). View [documentation](#documentation) for more Information.
+Implemented in [_sort.h_](sort/include/sort.h). View [documentation](#sorth) for more Information.
+## How to use/test
+Clone/Download Repository.
 ## Documentation
 #### sort.h
 
