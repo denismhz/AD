@@ -8,12 +8,15 @@
 
 void sortByLastName();
 void sortByAge();
-void testIfSorted();
-void prarr(int *arr, int , int e);
+void prarr(int *, int , int );
 Person** createRandPersons(int num);
 
 template<typename T>
 int ageCompare(T a, T b);
+
+int compare(int a, int b){
+    return a>b?1:(a==b?0:-1);
+}
 
 int main(){
     srand(time(NULL));
@@ -21,26 +24,17 @@ int main(){
     sortByLastName();
     std::cout << "----Sorting by Age:\n";
     sortByAge();
-    /*int a[10] = {0};
-    std::string ss[5] = 
-        {"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
-    srand(time(NULL));
+
+    //Sort int array
+    int (*fct)(int a, int b) = compare;
+    Sort<int>* s = new Sort<int>(fct);
+    int a[10] = {0};
     for(int i = 0; i < 10; i++){
         a[i] = rand() % 100;
     }
-    //prarr(a, 0, 9);
-    printf("\n");
-    for(int i = 0; i < 5; i++){
-        std::cout << ss[i] << ", ";
-    }
-    printf("\n");
-    s->radixSort(persons, ss, 26, 5, 5);
-    for(int i = 0; i < 5; i++){
-        std::cout << ss[i] << ", ";
-    }
-    //prarr(a, 0,9);
-    //printf("\n");
-    //printf("%d\n", test(a, 10));*/
+    prarr(a, 0, 9);
+    s->quickSort(a, 0, 9);
+    prarr(a, 0,9);
     return 0;
 }
 
@@ -85,20 +79,13 @@ void sortByAge(){
     //function pointer to int ageCompare()
     int (*fct)(Person*, Person*) = ageCompare;
     Sort<Person*>* s = new Sort<Person*>(fct);
-    s->quickSort(persons, 0, 9);
+    s->bubbleSort(persons, 10);
 
     //print after sorting
     for(int i = 0; i < 10; i++){
         persons[i]->toString();
     }
     std::cout << "\n";
-}
-
-int testIfSorted(int* p, int l){
-    for(int i = 0; i < l; i++){
-        if(p[i] > p[i+1] && i+1 < l) return -1;
-    }
-    return 1;
 }
 
 void prarr(int *arr, int s, int e){
