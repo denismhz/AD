@@ -53,7 +53,7 @@ Overview of all sorting algorithms implemented in this project with time and spa
  * Worst case time complexity: **O(nk)**
  * Spacecomplexity: **O(n+k)**
  * stable
-Implemented in [_sort.h_](include/sort.h). View [documentation](#documentation) for more Information.
+Implemented in [_sort.h_](sort/include/sort.h). View [documentation](#documentation) for more Information.
 ## Documentation
 #### sort.h
 
