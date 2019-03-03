@@ -3,6 +3,7 @@ My implementation of different algorithms and datastructures in C++ for better u
 
 ## Table of contents
 * [Sorting algorithms](#sorting-algorithms)
+* [sort.h](#sort.h)
 * [Documentation](#documentation)
 * [Code Examples](#code-examples)
 
