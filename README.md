@@ -7,115 +7,115 @@ My implementation of different algorithms and datastructures in C++ for better u
 * [Code Examples](#code-examples)
 
 ## Sorting algorithms
-  Overview of all sorting algorithms implemented in this project with time and space complexity.
-  
-  1. **Bubblesort**
-    ..* Worst case time complexity: **O(n^2)**
-    ..* Spacecomplexity: **O(1)**
-    ..* "In-place algorithm"
-    ..* stable
-    
-  1. **Selectionsort**
-    ..* Worst case time complexity: **O(n^2)**
-    ..* Spacecomplexity: **O(1)**
-    ..* "In-place algorithm"
-    ..* unstable
-    
-  1. **Insertionsort**
-    ..* Worst case time complexity: **O(n^2)**
-    ..* Spacecomplexity: **O(1)**
-    ..* "In-place algorithm"
-    ..* stable
-    
-  1. **Shellsort**
-    ..* Variation of Insertion Sort (1 < gap)
-    ..* Worst case time complexity: **O(n^2)** (dependent on gap)
-    ..* Spacecomplexity: **O(1)**
-    ..* "In-place algorithm"
-    ..* unstable
-    
-  1. **Mergesort**
-    ..* Worst case time complexity: **O(nln(n))**
-    ..* Spacecomplexity: **O(n)**
-    ..* "In-place algorithm"
-    ..* Divide and conquer
-    ..* stable
-    
-  1. **Quicksort**
-    ..* Worst case time complexity: **O(n^2)**
-    ..* Average case time complexity: **O(nln(n))**
-    ..* Mostly performs better than mergesort
-    ..* Spacecomplexity: **O(1)**
-    ..* "In-place algorithm"
-    ..* unstable
-    
-  1. **Counting Sort**
-    ..* Only works with non-negative discrete values
-    ..* Does not use comparison
-    ..* Complexity depending on range of algorithms
-    ..* Worst case time complexity: **O(n+k)**
-    ..* Spacecomplexity: **O(k)**
-    ..* unstable (stable variation used in radixsort)
-    
-  1. **Radixsort**
-    ..* Worst case time complexity: **O(nk)**
-    ..* Spacecomplexity: **O(n+k)**
-    ..* stable
-  
-  Implemented in [_sort.h_](include/sort.h). View [documentation](#documentation) for more Information.
+Overview of all sorting algorithms implemented in this project with time and space complexity.
+
+1. **Bubblesort**
+..* Worst case time complexity: **O(n^2)**
+..* Spacecomplexity: **O(1)**
+..* "In-place algorithm"
+..* stable
+
+1. **Selectionsort**
+..* Worst case time complexity: **O(n^2)**
+..* Spacecomplexity: **O(1)**
+..* "In-place algorithm"
+..* unstable
+
+1. **Insertionsort**
+..* Worst case time complexity: **O(n^2)**
+..* Spacecomplexity: **O(1)**
+..* "In-place algorithm"
+..* stable
+
+1. **Shellsort**
+..* Variation of Insertion Sort (1 < gap)
+..* Worst case time complexity: **O(n^2)** (dependent on gap)
+..* Spacecomplexity: **O(1)**
+..* "In-place algorithm"
+..* unstable
+
+1. **Mergesort**
+..* Worst case time complexity: **O(nln(n))**
+..* Spacecomplexity: **O(n)**
+..* "In-place algorithm"
+..* Divide and conquer
+..* stable
+
+1. **Quicksort**
+..* Worst case time complexity: **O(n^2)**
+..* Average case time complexity: **O(nln(n))**
+..* Mostly performs better than mergesort
+..* Spacecomplexity: **O(1)**
+..* "In-place algorithm"
+..* unstable
+
+1. **Counting Sort**
+..* Only works with non-negative discrete values
+..* Does not use comparison
+..* Complexity depending on range of algorithms
+..* Worst case time complexity: **O(n+k)**
+..* Spacecomplexity: **O(k)**
+..* unstable (stable variation used in radixsort)
+
+1. **Radixsort**
+..* Worst case time complexity: **O(nk)**
+..* Spacecomplexity: **O(n+k)**
+..* stable
+
+Implemented in [_sort.h_](include/sort.h). View [documentation](#documentation) for more Information.
 
 ## Documentation
 
 #### sort.h
-  
-  `void prarr(int *arr, int s, int e);`
-    Print array arr from index s to index e.
-    
-  `int pow(int, int);`
-    @return first parameter to the power of second parameter
-   
-  `int getChar(int, std::string);`
-    @param int position, string value
-    @return numeric value of string at position - 'a'
-    map 'a' - 'z' to 0-25
-    
-  `Sort();`
-    Default constructor
-  
-  `Sort(int (*compare)(T, T));`
-    @param function pointer to provided compare function
-    
-  `void bubbleSort(T*, int);`
-    @param T* array of elements of type T, int i number of elements in array
-    
-  `void selectionSort(T*, int);`
-    @param T* array of elements of type T, int i number of elements in array
-    
-  `void insertionSort(T*, int);`
-    @param T* array of elements of type T, int i number of elements in array
-    
-  `void shellSort(T*, int);`
-    @param T* array of elements of type T, int i number of elements in array
-  
-  `void mergeSort(T*, int, int);`
-    @param T* array of elements of type T, sort elements from int start to int end
-    
-  `void merge(T*, int, int, int);`
-  
-  `void countingSort(int*, int);`
-    
-  `void quickSort(T*, int, int);`
-  
-  `int partition(T*, int, int);`
-  
-  `void radixSort(T*, std::string[], int, int);`
-  
-  `void swap(T&, T&);`
-  
-  `T getMax(T*, int);`
-  
-  `T getMin(T*, int);`
-  
-  `int (*compare)(T,T);`  
-  
-  `void radixSingleSort(T*, std::string[], int, int, int, int);`
+
+`void prarr(int *arr, int s, int e);`
+Print array arr from index s to index e.
+
+`int pow(int, int);`
+@return first parameter to the power of second parameter
+
+`int getChar(int, std::string);`
+@param int position, string value
+@return numeric value of string at position - 'a'
+map 'a' - 'z' to 0-25
+
+`Sort();`
+Default constructor
+
+`Sort(int (*compare)(T, T));`
+@param function pointer to provided compare function
+
+`void bubbleSort(T*, int);`
+@param T* array of elements of type T, int i number of elements in array
+
+`void selectionSort(T*, int);`
+@param T* array of elements of type T, int i number of elements in array
+
+`void insertionSort(T*, int);`
+@param T* array of elements of type T, int i number of elements in array
+
+`void shellSort(T*, int);`
+@param T* array of elements of type T, int i number of elements in array
+
+`void mergeSort(T*, int, int);`
+@param T* array of elements of type T, sort elements from int start to int end
+
+`void merge(T*, int, int, int);`
+
+`void countingSort(int*, int);`
+
+`void quickSort(T*, int, int);`
+
+`int partition(T*, int, int);`
+
+`void radixSort(T*, std::string[], int, int);`
+
+`void swap(T&, T&);`
+
+`T getMax(T*, int);`
+
+`T getMin(T*, int);`
+
+`int (*compare)(T,T);`  
+
+`void radixSingleSort(T*, std::string[], int, int, int, int);`
