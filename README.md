@@ -92,31 +92,27 @@ Set the function by which objects are compared here. View [code examples](#code-
 `void bubbleSort(T*, int);`
 
 _@param_ T* array of elements of type T, int i number of elements in array
-
+___
 
 `void selectionSort(T*, int);`
 
 _@param_ T* array of elements of type T, int i number of elements in array
 ___
 
-
-
 `void insertionSort(T*, int);`
 
 _@param_ T* array of elements of type T, int i number of elements in array
 ___
 
-
 `void shellSort(T*, int);`
 
 _@param_ T* array of elements of type T, int i number of elements in array
-
+___
 
 `void mergeSort(T*, int, int);`
 
 _@param_ T* array of elements of type T, sort elements from int start to int end
-
-
+___
 
 `void merge(T*, int, int, int);`
 
