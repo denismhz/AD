@@ -60,7 +60,12 @@ Implemented in [_sort.h_](sort/include/sort.h). View [documentation](#sorth) for
 ## How to test/use
 Clone/Download Repository. `cd AD/sort/source` -> `make start`. Compiles and runs program.
 ## Documentation
+#### person.h
+[Example Class](sort/include/person.h).
+Create Objects with Name and Age.
 #### sort.h
+T can be any type. Functions with T* use the provided compare function.
+
 `void prarr(int *arr, int s, int e);`
 
 Print array arr from index s to index e.
@@ -74,6 +79,7 @@ ___
 `int getChar(int, std::string);`
 
 _@param_ int position, string value
+
 _@return_ numeric value of string at position - 'a' map 'a' - 'z' to 0-25
 ___
 
@@ -134,6 +140,7 @@ ___
 `int partition(T*, int, int);`
 
 _@param_ T* array of elements of type T, int start, int end
+
 _@return_ Index of new pivot
 Move all elements smaller than the pivot element to the left of it and all elements greater to the right of it.
 ___
@@ -141,6 +148,7 @@ ___
 `void radixSort(T*, std::string[], int, int);`
 
 _@param_ T* array of elements of type T, array of strings to be sorted, int radix, int number of elements
+
 One string in the string array belongs to one object in T* they must have the same index.
 Only sorts strings by alphabet. Does not use the comare function.
 ___
@@ -148,6 +156,7 @@ ___
 `void radixSingleSort(T*, std::string[], int, int, int, int);`
 
 _@param_ T* array of elements of type T, array of strings to be sorted, int position, int width, int radix, int number of elements
+
 One string in the string array belongs to one object in T* they must have the same index.
 Only sorts strings by alphabet. Does not use the comare function. Sorts strings by character at position.
 ___
@@ -160,18 +169,26 @@ ___
 `T getMax(T*, int);`
 
 _@param_ T* array of elements of type T, int number of Elements in T*
+
 _@return_ greatest object of type T
 ___
 
 `T getMin(T*, int);`
 
 _@param_ T* array of elements of type T, int number of Elements in T*
+
 _@return_ smallest object of type T
 ___
 
 `int (*compare)(T,T);`  
 
 _@param_ object of type T, object of type T
+
 _@return_ View [code examples](#code-examples) for more details.
+
 T can be any type of object. Define here by which values objects are compared and when they are greater, equal or smaller than another object.
 ___
+# Code Examples
+```cpp
+
+```
