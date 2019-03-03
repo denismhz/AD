@@ -9,10 +9,8 @@
 void sortByLastName();
 void sortByAge();
 void prarr(int *, int , int );
-Person** createRandPersons(int num);
 
-template<typename T>
-int ageCompare(T a, T b);
+int ageCompare(Person* a, Person* b);
 
 int compare(int a, int b){
     return a>b?1:(a==b?0:-1);
@@ -38,8 +36,7 @@ int main(){
     return 0;
 }
 
-template<typename T>
-int ageCompare(T a, T b){
+int ageCompare(Person* a, Person* b){
   if(a->getAge() > b->getAge()) return 1;
   if(b->getAge() > a->getAge()) return -1;
   return 0;
@@ -93,11 +90,3 @@ void prarr(int *arr, int s, int e){
     printf("%d%s", arr[i], i == e ? "\n" : ", ");
 }
 
-Person** createRandPersons(int num){
-    //Create array of random persons
-    Person** persons = (Person**) malloc(num*sizeof(Person*));
-    for(int i = 0; i < num; i++){
-        persons[i] = new Person(createFirstName(), createLastName(), randAge());
-    }
-    return persons;
-}
