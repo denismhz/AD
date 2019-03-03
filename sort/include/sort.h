@@ -4,7 +4,6 @@
 
 void prarr(int *arr, int s, int e);
 int pow(int, int);
-int getDigit(int, std::string, int);
 int getChar(int, std::string);
 
 template<class T>
@@ -13,13 +12,13 @@ class Sort
     public:
         Sort();
         Sort(int (*compare)(T, T));
-        void bubbleSort(T*, int); //works
-        void selectionSort(T*, int); //works
-        void insertionSort(T*, int); //works
-        void shellSort(T*, int); //works
-        void mergeSort(T*, int, int); //works
+        void bubbleSort(T*, int); 
+        void selectionSort(T*, int); 
+        void insertionSort(T*, int); 
+        void shellSort(T*, int); 
+        void mergeSort(T*, int, int); 
         void countingSort(int*, int);
-        void quickSort(T*, int, int); //works
+        void quickSort(T*, int, int); 
         void radixSort(T*, std::string[], int, int);
     private:
         void swap(T&, T&);
@@ -30,10 +29,6 @@ class Sort
         int partition(T*, int, int);
         void radixSingleSort(T*, std::string[], int, int, int, int);
 };
-
-int getDigit(int pos, std::string val, int radix){
-    return val[pos]-'a';
-}
 
 int getChar(int pos, std::string val){
     return val[pos]-'a';
