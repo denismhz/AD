@@ -13,6 +13,9 @@ SRC = main.cpp sort.cpp
 prog: main.cpp $(DEPS)
 	$(CC) -o $@ $^ 
 
+vis: sortv.cpp $(DEPS)
+	$(CC) -o $@ $^ -lSDL2
+
 .PHONY: clean
 	
 clean:
