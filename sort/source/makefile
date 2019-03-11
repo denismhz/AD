@@ -9,12 +9,13 @@ CC = g++
 CFLAGS = -L$(LDIR)
 LIBS = -lsort
 SRC = main.cpp sort.cpp
+.DEFAULT_GOAL := vis
 
 prog: main.cpp $(DEPS)
 	$(CC) -o $@ $^ 
 
-vis: sortv.cpp $(DEPS)
-	$(CC) -o $@ $^ -lSDL2
+vis: sortv.cpp button.h $(DEPS)
+	$(CC) -o $@ $^ -lSDL2 -lSDL2_ttf
 
 .PHONY: clean
 	
