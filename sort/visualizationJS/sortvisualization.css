@@ -1,0 +1,24 @@
+body {
+    margin: 0 auto;
+}
+
+div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
+
+.algorithm {
+    padding: 50px 15% 50px 15%;
+}
+
+.algorithm:nth-child(odd) {
+    background: rgba(127,127,127,0.2);
+}
+
+#countingsort-div div{
+    margin: 0 auto;
+}

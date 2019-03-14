@@ -51,13 +51,13 @@ Person** createRandPersons(int num){
     //Create array of random persons
     Person** persons = (Person**) malloc(num*sizeof(Person*));
     for(int i = 0; i < num; i++){
-        persons[i] = new Person(createFirstName(), createLastName(), randAge());
+        persons[i] = new Person(createFirstName(), createLastName(), randAge());    
     }
     return persons;
 }
 
 void Person::toString(){
-    cout << getName() << ", " << getAge() << "\n";
+    cout << this->firstName << ", " << this->lastName << "\n";
 }
 
 int randAge(){
@@ -67,7 +67,7 @@ int randAge(){
 string createFirstName(){
     string name;
     ifstream names;
-    names.open("../names/first-names.txt");
+    names.open("/home/denis/repos/AD/sort/names/first-names.txt");
     int i = rand() % 4945;
     if(names.is_open()){
         while(!names.eof() && i >= 0){
@@ -81,7 +81,7 @@ string createFirstName(){
 string createLastName(){
     string name;
     ifstream names;
-    names.open("../names/names.txt");
+    names.open("/home/denis/repos/AD/sort/names/names.txt");
     int i = rand() % 21895;
     if(names.is_open()){
         while(!names.eof() && i >= 0){

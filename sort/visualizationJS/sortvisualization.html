@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=2, minimum-scale=0.86, user-scalable=yes, minimal-ui">
+        <link rel="stylesheet" type="text/css" href="sortvisualization.css">
+    </head>
+    <body>
+        <div id="bubblesort-div" class="algorithm" style="text-align: center">
+            <h2>Bubblesort for dummies</h2>
+            <canvas id="bubblesort" style="border:1px solid black; margin: 0 auto">
+            </canvas>
+            <div class="button">
+                <button onclick="test.next()">Next</button>
+                <button onclick="init();">Randomize</button>
+                <button onclick="auto(test)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div id="explanation">
+                <p id="dynamic">
+                </p>
+                <p>After one iteration the greatest element in the array
+                is at the last positon and in the right order. For the next
+                iteration we bubblesort the unordered part of the array.
+                </p>
+            </div>
+        </div>
+        <div id="insertionsort-div" class="algorithm">
+            <h2>Insertionsort for dummies</h2>
+            <div id="arr" style="border: 1px solid black; margin-bottom: 5px;">
+            </div>
+            <div class="button">
+                <button onclick="insertSort.next()">Next</button>
+                <button onclick="initInsertsort()">Randomize</button>
+                <button onclick="auto(insertSort)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div class="explanation">
+                <p id="insertsort-exp" >
+                </p>
+                <p>Choose an Element(New Elem) out of the array you want 
+                to "insert". Compare it to previous Elements in the array.
+                If New Elem is smaller than a previous Element swap them.
+                </p>
+            </div>
+        </div>
+        <div id="selectionsort-div" class="algorithm">
+            <h2>Selectionsort for dummies</h2>
+            <div id="arrSel" style="border: 1px solid black; margin-bottom: 5px;">
+            </div>
+            <div class="button">
+                <button onclick="selectSort.next()">Next</button>
+                <button onclick="initSelectsort()">Randomize</button>
+                <button onclick="auto(selectSort)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div class="explanation">
+                <p id="selectsort-exp">
+                </p>
+                <p>"Search" the largest element in the array then swap it with 
+                the last element in the array. The last element is in right sorted
+                after one iteration. Sort the remaining elements.(largest to end, 
+                second largest to end-1, third largest to end-2, ...)
+                </p>
+            </div>
+        </div>
+        <div id="shellsort-div" class="algorithm">
+            <h2>Shellsort for dummies</h2>
+            <div id="arrShel" style="border: 1px solid black; margin-bottom: 5px;">
+            </div>
+            <div class="button">
+                <button onclick="shellSort.next()">Next</button>
+                <button onclick="initShellsort()">Randomize</button>
+                <button onclick="auto(shellSort)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div class="explanation">
+                <p id="shellsort-exp">
+                </p>
+                <p>Compare elements using a gap (vorsortieren, 
+                pre-sort with gap) that gets smaller. After each iteration the 
+                array is "more sorted" than before. In the end the gap equals 1.
+                </p>
+            </div>
+        </div>
+        <div id="countingsort-div" class="algorithm">
+            <h2>Countingsort for dummies</h2>
+            <div id="arrCount" style="border: 1px solid black; margin-bottom: 5px;">
+            </div>
+            <div id="tmp-wrapper" style="border:1px solid black; margin: 0 auto">
+                <h4 style="margin-top: 0">Temporary Array</h4>
+                <div id="arrCountTmp" >
+                </div>
+            </div>
+            <div class="button">
+                <button onclick="countingSort.next()">Next</button>
+                <button onclick="initCountingsort()">Randomize</button>
+                <button onclick="auto(countingSort)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div class="explanation">
+                <p id="countingsort-exp">
+                </p>
+                <p>Only works with non-negative discrete values. Does not use 
+                comparison. Count how many times a value can be found in an array.
+                Save the ocurrences of the values in an temporary array of the size
+                range of values. Save occurences in increasing order lowest to highest
+                value. Write the values back into the array.
+                </p>
+            </div>
+        </div>
+        <p><em>For further information about the sorting algorithms 
+        visualized on this site view my
+        <a target="empty" href="https://github.com/denismhz/AD"> github repository.</a></em>
+        <br>
+        <a target="empty" href="https://github.com/denismhz/AD/tree/master/sort/include/sort.h">Implementation in C++</a>
+        </p>
+        <script src="bubblesortVisual.js"></script>
+        <script src="insertionsortVisual.js"></script>
+        <script src="selectionsortVisual.js"></script>
+        <script src="shellsortVisual.js"></script>
+        <script src="countingsortVisual.js"></script>
+    </body>
+</html>
