@@ -6,7 +6,8 @@ initSelectsort();
 
 function initSelectsort(){
     randomize(arr3, 16);
-    selectSort = selectionSort(arr3);
+  stop();
+  selectSort = selectionSort(arr3);
     drawDivArr(divArrSel, arr3);
 }
 

@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="sortvisualization.css">
     </head>
     <body>
+      <div id="flex-container">
         <div id="bubblesort-div" class="algorithm" style="text-align: center">
             <h2>Bubblesort for dummies</h2>
             <canvas id="bubblesort" style="border:1px solid black; margin: 0 auto">
@@ -15,7 +16,7 @@
                 <button onclick="auto(test)">Auto</button>
                 <button onclick="stop()">Stop</button>
             </div>
-            <div id="explanation">
+            <div class="explanation">
                 <p id="dynamic">
                 </p>
                 <p>After one iteration the greatest element in the array
@@ -108,7 +109,8 @@
                 </p>
             </div>
         </div>
-        <p><em>For further information about the sorting algorithms 
+      </div>
+        <p id="footer"><em>For further information about the sorting algorithms 
         visualized on this site view my
         <a target="empty" href="https://github.com/denismhz/AD"> github repository.</a></em>
         <br>

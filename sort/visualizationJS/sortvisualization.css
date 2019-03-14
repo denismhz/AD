@@ -1,9 +1,22 @@
 body {
     margin: 0 auto;
+    background: url("img/img-min2.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+h2 {
+  margin-top: 0;
+  padding-top: 46px;
+}
+
+#flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 div {
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -11,14 +24,44 @@ p {
     text-align: left;
 }
 
-.algorithm {
-    padding: 50px 15% 50px 15%;
+#footer{
+  margin: 0;
+  padding: 16px;
+  background: rgba(255,255,255,0.8);
 }
 
+.algorithm {
+  width: 45%;
+  min-width: 350px;
+  border-radius: 25px 25px 25px 25px;
+  margin: 10px;
+}
+
+.algorithm .explanation {
+  padding: 0px 30px 30px 30px;
+}
+
+.algorithm div{
+  margin: 0 auto;
+}
 .algorithm:nth-child(odd) {
-    background: rgba(127,127,127,0.2);
+    background: rgba(255,255,255,1);
+}
+
+.algorithm:nth-child(even){
+    background: rgba(255,255,255,0.8);
 }
 
 #countingsort-div div{
     margin: 0 auto;
+}
+
+@media screen and (max-width: 757px) {
+  .algorithm{
+    margin: 10px;
+    width: 90%;
+  }
+  #divArrSel {
+    margin: 0 auto;
+  }
 }

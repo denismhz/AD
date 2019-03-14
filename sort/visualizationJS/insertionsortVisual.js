@@ -10,8 +10,9 @@ function initInsertsort(){
     randomize(arr2, 16);
     i = 0;
     j = 0;
+  stop();
     insertSort = insertionSort(arr2);
-    insertsortExp.innerHTML = "...";
+  insertsortExp.innerHTML = "...";
     drawDivArr(divArr, arr2);
 }
 
@@ -60,8 +61,8 @@ function* insertionSort(arr){
         newElem = arr[i];
         var k = i;
         for(j = i-1; j >= 0; j--){
-            drawDivArr(divArr, arr, k, j, " NewElem");
-            yield;
+          drawDivArr(divArr, arr, k, j, " NewElem");
+          yield;
             if(newElem < arr[j]){
             var dtxt = "Compare if <font color='#24e273'>Array["+j+"]</font> is greater than <font color='#4286f4'>Array["+(j+1)+"]</font>";
             insertsortExp.innerHTML = dtxt;

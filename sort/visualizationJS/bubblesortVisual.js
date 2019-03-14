@@ -15,16 +15,16 @@ function randomize(arr, max){
 }
 
 function auto(t){
-    if(!id){
+  if(!id){
         id = setInterval(function(){
             t.next();
         }, 500);
-    }
+  } else stop();
 }
 
 function stop(){
-    clearInterval(id);
-    id = 0;
+  clearInterval(id);
+  id= 0;
 }
 
 
@@ -36,8 +36,8 @@ function init(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     canvas.width = 30*arr.length;
     canvas.height = getMax(arr)*10+30;
-    test = bubblesort(arr);
-    clearInterval(id);
+  stop(3);
+  test = bubblesort(arr);
     id = 0;
     drawArr(arr,-1,-1);
 }

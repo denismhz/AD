@@ -26,7 +26,8 @@ function initCountingsort(){
     tmpWrapper.style.width = ((max-min)+1)*30+"px";
     divArrCountTmp.style.marginBottom = "0px";
     tmpWrapper.style.marginBottom = "5px";
-    countExp.innerHTML = "...";
+  countExp.innerHTML = "...";
+  stop();
     drawDivArr(divArrCountTmp, tmp);
     drawDivArr(divArrCount, arr5);
 }
