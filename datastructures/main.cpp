@@ -1,9 +1,14 @@
 #include "singlyLinkedList.h"
+#include "doublyLinkedList.h"
 #include "../sort/include/person.h"
 #include <iostream>
 
+/*
+ * gcc -Iincludepath
+ */
+
 int main(void){
-    LinkedList<int>* list = new LinkedList<int>();
+    /*LinkedList<int>* list = new LinkedList<int>();
 
     list->addNodeAtIndex(3, 0);
     list->addNodeAtIndex(2, 0);
@@ -35,5 +40,33 @@ int main(void){
     for(int i = 0; i < personList->getLength(); i++){
         (personList->getDataAtIndex(i))->toString();
     }
+    */
+    DoublyLinkedList<int>* list = new DoublyLinkedList<int>();
+    std::cout << list->isEmpty() << endl;
+    list->addNodeAtIndex(2, 0);
+    list->addNodeAtIndex(3, 1);
+    list->addNodeAtIndex(4, 2);
+    list->addNodeAtIndex(5, 1);
+    list->addNodeAtIndex(6, 2);
+    list->addNodeAtIndex(8, 5);
+    list->addNodeAtIndex(9, 0);
+    list->printList();
+    std::cout << endl;
+    for(int i = 0; i < list->getLength(); i++)
+        std::cout << list->getDataAtIndex(i);
+    std::cout << endl;
+    list->removeNodeAtIndex(0);
+    list->removeNodeAtIndex(0);
+    list->removeNodeAtIndex(3);
+    list->printList();
+    for(int i = 0; i < list->getLength(); i++){
+        list->removeNodeAtIndex(i);
+    }
+    free(list);
+
+    DoublyLinkedList<int> list2;
+    list2.addNodeAtIndex(3,0);
+    list2.addNodeAtIndex(5,0);
+    list2.printList();
     
 }
