@@ -1,6 +1,10 @@
 body {
     margin: 0 auto;
-    background: url("img/img-min2.jpg");
+    /*background: url("../img/img-min2.jpg");*/
+    background: #DE6262;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -30,11 +34,26 @@ p {
   background: rgba(255,255,255,0.8);
 }
 
+#mergesort-div {
+    width: 100%;
+}
+
 .algorithm {
   width: 45%;
   min-width: 350px;
-  border-radius: 25px 25px 25px 25px;
+    border-radius: 15px 15px 15px 15px;
   margin: 10px;
+}
+
+.arr-div{
+    width:100%;
+}
+
+#mergesort-div #arrMerge div {
+    display: inline-block;
+}
+#arrMerge {
+    height: 600px;
 }
 
 .algorithm .explanation {
@@ -49,7 +68,7 @@ p {
 }
 
 .algorithm:nth-child(even){
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,1);
 }
 
 #countingsort-div div{
@@ -61,7 +80,11 @@ p {
     margin: 10px;
     width: 90%;
   }
-  #divArrSel {
-    margin: 0 auto;
-  }
+    .algorithm:nth-child(odd) {
+        background: rgba(255,255,255,1);
+    }
+
+    .algorithm:nth-child(even){
+        background: rgba(255,255,255,0.8);
+    }
 }

@@ -17,13 +17,13 @@ function getMin(arr){
 }
 
 function initCountingsort(){
-    randomize(arr5, 12);
-    console.log(arr5);
+    randomize(arr5, 10);
     countingSort = countingsort(arr5);
     max = getMax(arr5);
     min = getMin(arr5);
     tmp = new Array((max - min)+1).fill(0);
-    tmpWrapper.style.width = ((max-min)+1)*30+"px";
+    //tmpWrapper.style.width = ((max-min)+1)*30+"px";
+    tmpWrapper.style.width = "100%";
     divArrCountTmp.style.marginBottom = "0px";
     tmpWrapper.style.marginBottom = "5px";
   countExp.innerHTML = "...";
@@ -61,5 +61,4 @@ function* countingsort(arr){
         }
         drawDivArr(divArrCount, arr, i-min, -1, "");
     }
-    console.log(arr);
 }

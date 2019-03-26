@@ -4,7 +4,7 @@ var shellExp = document.getElementById("shellsort-exp");
 var shellSort;
 initShellsort();
 function initShellsort(){
-  randomize(arr4, 16);
+  randomize(arr4, 500);
   stop();
     shellSort = shellsort(arr4);
     //shellExp.innerHTML = "...";

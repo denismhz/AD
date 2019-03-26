@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=2, minimum-scale=0.86, user-scalable=yes, minimal-ui">
         <link rel="stylesheet" type="text/css" href="sortvisualization.css">
+        <title>Sorting Algorithms</title>
     </head>
     <body>
       <div id="flex-container">
         <div id="bubblesort-div" class="algorithm" style="text-align: center">
             <h2>Bubblesort for dummies</h2>
-            <canvas id="bubblesort" style="border:1px solid black; margin: 0 auto">
-            </canvas>
+            <div id="bubblesort" style="margin-bottom: 5px">
+            </div>
             <div class="button">
                 <button onclick="test.next()">Next</button>
                 <button onclick="init();">Randomize</button>
@@ -27,7 +28,7 @@
         </div>
         <div id="insertionsort-div" class="algorithm">
             <h2>Insertionsort for dummies</h2>
-            <div id="arr" style="border: 1px solid black; margin-bottom: 5px;">
+            <div id="arr" class="array-div" style="margin-bottom: 5px;">
             </div>
             <div class="button">
                 <button onclick="insertSort.next()">Next</button>
@@ -46,7 +47,7 @@
         </div>
         <div id="selectionsort-div" class="algorithm">
             <h2>Selectionsort for dummies</h2>
-            <div id="arrSel" style="border: 1px solid black; margin-bottom: 5px;">
+            <div id="arrSel" class="array-div" style="margin-bottom: 5px;">
             </div>
             <div class="button">
                 <button onclick="selectSort.next()">Next</button>
@@ -66,7 +67,7 @@
         </div>
         <div id="shellsort-div" class="algorithm">
             <h2>Shellsort for dummies</h2>
-            <div id="arrShel" style="border: 1px solid black; margin-bottom: 5px;">
+            <div id="arrShel" class="array-div" style="margin-bottom: 5px;">
             </div>
             <div class="button">
                 <button onclick="shellSort.next()">Next</button>
@@ -85,11 +86,11 @@
         </div>
         <div id="countingsort-div" class="algorithm">
             <h2>Countingsort for dummies</h2>
-            <div id="arrCount" style="border: 1px solid black; margin-bottom: 5px;">
+            <div id="arrCount" class="array-div" style="margin-bottom: 5px;">
             </div>
-            <div id="tmp-wrapper" style="border:1px solid black; margin: 0 auto">
-                <h4 style="margin-top: 0">Temporary Array</h4>
-                <div id="arrCountTmp" >
+            <div id="tmp-wrapper" style="margin: 0 auto">
+                <h4 style="margin-top: 0;">Temporary Array</h4>
+                <div id="arrCountTmp" style="height:140px;" >
                 </div>
             </div>
             <div class="button">
@@ -105,7 +106,63 @@
                 comparison. Count how many times a value can be found in an array.
                 Save the ocurrences of the values in an temporary array of the size
                 range of values. Save occurences in increasing order lowest to highest
-                value. Write the values back into the array.
+                value. Write the values back into the array.(Requires a temporary
+                array of size (max - min) +1);
+                </p>
+            </div>
+        </div>
+        <div id="mergesort-div" class="algorithm">
+            <h2>Mergesort for dummies</h2>
+            <div id="arrMerge" style="border: 1px solid black; margin-bottom: 5px;">
+                <div id="first-step" style="width:100%;height:100%; display:inline-block">
+                    <div id="l1" style="width:49%">
+                        <div id="l1l1" style="width:49%">
+                            <div id="l1l1l1" style="width:49%">
+                                <div id="l1l1l1l1">
+                                </div>
+                                <div id="l1l1l1r1">
+                                </div>
+                            </div>
+                            <div id="l1l1r1" style="width:49%">
+                                <div id="l1l1r1r1">
+                                </div>
+                                <div id="l1l1r1l1">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="l1r1" style="width:49%">
+                            <div id="l1r1r1" style="width:49%">
+                            </div>
+                            <div id="llr1l1" style="width:49%">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="r1" style="width:49%">
+                        <div id="r1r1" style="width:49%">
+                            <div id="r1r1l1" style="width:49%">
+                            </div>
+                            <div id="rlr1r1" style="width:49%">
+                            </div>
+                        </div>
+                        <div id="r1l1" style="width:49%">
+                            <div id="r1l1l1" style="width:49%">
+                            </div>
+                            <div id="rll1r1" style="width:49%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button onclick="mergeSort.next()">Next</button>
+                <button onclick="initMergesort()">Randomize</button>
+                <button onclick="auto(mergeSort)">Auto</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+            <div class="explanation">
+                <p id="mergesort-exp">
+                </p>
+                <p>
                 </p>
             </div>
         </div>
@@ -121,5 +178,6 @@
         <script src="selectionsortVisual.js"></script>
         <script src="shellsortVisual.js"></script>
         <script src="countingsortVisual.js"></script>
+        <script src="mergesortVisual.js"></script>
     </body>
 </html>
