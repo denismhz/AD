@@ -23,6 +23,7 @@ class LinkedList
         void removeNodeAtIndex(int);
         T getDataAtIndex(int);
         bool isEmpty();
+        void insertSorted(int);
         void printList();
         node* list;
     private:
@@ -101,6 +102,28 @@ T LinkedList<T>::getDataAtIndex(int index){
 template<typename T>
 bool LinkedList<T>::isEmpty(){
     return !this->list;
+}
+
+template<typename T>
+void LinkedList<T>::insertSorted(int elem){
+    node* newNode = new node;
+    newNode->data = elem;
+    node* tmp = this->list;
+    if(!tmp || tmp->data >= elem){
+        this->list = newNode;
+        newNode->nextNode = tmp;
+        ++length;
+        return;
+    }
+    node* current = this->list->nextNode;
+    node* prev = this->list;
+    while(current && current->data < elem){
+        prev = current;
+        current = current->nextNode;
+    }
+    newNode->nextNode = current;
+    prev->nextNode = newNode;
+    ++length;
 }
 
 template<typename T>

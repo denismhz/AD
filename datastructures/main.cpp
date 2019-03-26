@@ -1,5 +1,6 @@
 #include "singlyLinkedList.h"
 #include "doublyLinkedList.h"
+#include "stack.h"
 #include "../sort/include/person.h"
 #include <iostream>
 
@@ -40,7 +41,7 @@ int main(void){
     for(int i = 0; i < personList->getLength(); i++){
         (personList->getDataAtIndex(i))->toString();
     }
-    */
+    
     DoublyLinkedList<int>* list = new DoublyLinkedList<int>();
     std::cout << list->isEmpty() << endl;
     list->addNodeAtIndex(2, 0);
@@ -68,5 +69,24 @@ int main(void){
     list2.addNodeAtIndex(3,0);
     list2.addNodeAtIndex(5,0);
     list2.printList();
+
+    Stack<int> stack;
+    stack.push(1);
+    stack.push(8);
+    stack.push(2);
+    std::cout << stack.peek();
+    stack.pop();
+    std::cout << stack.peek();
+    */
     
+    LinkedList<int> list3;
+    list3.insertSorted(1);
+    list3.insertSorted(1);
+    list3.insertSorted(1);
+
+    list3.insertSorted(6);
+    list3.insertSorted(4);
+    list3.insertSorted(3);
+    list3.insertSorted(5);
+    list3.printList();
 }
