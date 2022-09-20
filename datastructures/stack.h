@@ -6,8 +6,9 @@
 template<class T>
 class Stack{
     public:
+        Stack();
         void push(T);
-        int pop();
+        T pop();
         T peek();
     private:
         LinkedList<T> stack;
@@ -15,17 +16,25 @@ class Stack{
 };
 
 template<typename T>
-void Stack<T>::push(T elem){
-    stack.addNodeAtIndex(elem, 0);
+Stack<T>::Stack(){
+    this->length = 0;
 }
 
 template<typename T>
-int Stack<T>::pop(){
-    if(!stack){
+void Stack<T>::push(T elem){
+    stack.addNodeAtIndex(elem, 0);
+    this->length++;
+}
+
+template<typename T>
+T Stack<T>::pop(){
+    if(length == 0){
         return -1;
     }
+    T data = stack.getDataAtIndex(0);
     stack.removeNodeAtIndex(0);
-    return 0;
+    this->length--;
+    return data;
 }
 
 template<typename T>

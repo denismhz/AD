@@ -3,10 +3,14 @@
 #include "stack.h"
 #include "../sort/include/person.h"
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 /*
  * gcc -Iincludepath
  */
+
+int isPalyndrome(string);
 
 int main(void){
     /*LinkedList<int>* list = new LinkedList<int>();
@@ -77,7 +81,7 @@ int main(void){
     std::cout << stack.peek();
     stack.pop();
     std::cout << stack.peek();
-    */
+    
     
     LinkedList<int> list3;
     list3.insertSorted(1);
@@ -89,4 +93,29 @@ int main(void){
     list3.insertSorted(3);
     list3.insertSorted(5);
     list3.printList();
+    */
+    std::cout << isPalyndrome("helo");
+    std::cout << isPalyndrome("racecar");
+    std::cout << isPalyndrome("I did, did I?");
+    std::cout << isPalyndrome("Don't nod");
+    std::cout << isPalyndrome("Was it a car or a cat I saw?");
+
+    return 0;
+}
+
+int isPalyndrome(string s){
+    Stack<char> stack;
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+    int i = 0;
+    int l = 0;
+    for(i = 0; s[i] != '\0'; i++){
+        l++;
+        if(s[i] >= 'a' && s[i] <= 'z')
+            stack.push(s[i]);
+    }
+    for(int j = 0; j < l; j++){
+        if(s[j] >= 'a' && s[j] <= 'z')
+            if(stack.pop() != s[j]) return 0;
+    }
+    return 1;
 }
